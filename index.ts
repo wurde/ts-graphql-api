@@ -6,6 +6,7 @@ import 'reflect-metadata';
 import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
+import { createConnection } from 'typeorm';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
 
@@ -42,16 +43,22 @@ app.use(express.json());
 async function bootstrap() {
   try {
     /**
-    * Define schema
-    */
+     * Initialize ORM
+     */
+
+    await createConnection();
+
+    /**
+     * Define schema
+     */
 
     const schema = await buildSchema({
       resolvers: [__dirname + '/**/*.resolver.ts']
     });
 
     /**
-    * Define and mount GraphQL server
-    */
+     * Define and mount GraphQL server
+     */
 
     const server = new ApolloServer({
       schema,
@@ -60,8 +67,8 @@ async function bootstrap() {
     server.applyMiddleware({ app });
 
     /**
-    * Start server
-    */
+     * Start server
+     */
 
     app.listen(port, () => {
       console.log(`Express running on port ${port}`);
