@@ -108,3 +108,6 @@ dist
 
 # Temporary files
 tmp/
+
+# Database
+*.sqlite3
