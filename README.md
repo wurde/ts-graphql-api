@@ -1,4 +1,4 @@
-# TypeGraphQL Example
+# TypeGraphQL Backend API
 
 An example backend API using TypeGraphQL library.
 
@@ -25,20 +25,18 @@ npm run start:dev
 
 ## Apollo Server
 
-For a GraphQL server I use the ApolloServer. This 
-allows passing in an executable `schema`, which 
-combines both type definitions and resolvers.
+For a GraphQL server I use Apollo. This allows
+passing in an executable `schema`, which combines
+both type definitions and resolvers.
 
-## SQLite Database
+## SQLite with TypeORM
 
-I use SQLite as a local data store.
-
-Our API serves The Open Data Dataset. It's a dataset 
-containing the Open Data Portals of 100 of America's
-largest cities.
+I use SQLite as a local data store and TypeORM for 
+object-relational mapping (ORM).
 
 ## References
 
 - https://typegraphql.ml/
-- https://www.apollographql.com/docs/apollo-server/api/apollo-server/
-- https://cooldatasets.com/
+- https://apollographql.com/
+- https://typeorm.io/
+- https://sqlite.org/

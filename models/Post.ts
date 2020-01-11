@@ -2,21 +2,26 @@
  * Dependencies
  */
 
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from 'typeorm';
+import { ObjectType, Field, Int } from 'type-graphql';
 
 /**
  * Define model
  */
 
+@ObjectType()
 @Entity()
-class Post {
+class Post extends BaseEntity {
+  @Field(() => Int)
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Field()
   @Column()
   title: string;
 
-  @Column()
+  @Field({ nullable: true })
+  @Column({ nullable: true })
   content: string;
 }
 
