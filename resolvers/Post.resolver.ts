@@ -30,6 +30,12 @@ class PostResolver {
     return true;
   }
 
+  @Mutation(() => Boolean)
+  async deletePost(@Arg('id', () => Int) id: number) {
+    await Post.delete({ id });
+    return true;
+  }
+
   @Query(() => [Post])
   posts() {
     return Post.find();
