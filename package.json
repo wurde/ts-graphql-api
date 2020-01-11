@@ -1,14 +1,13 @@
 {
   "name": "ts-graphql-api",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "An example backend API using TypeGraphQL library.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Andy Bettisworth",
+  "license": "MIT",
   "dependencies": {
     "@types/graphql": "^14.2.0",
     "apollo-server": "^2.6.7",
