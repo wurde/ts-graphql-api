@@ -4,6 +4,7 @@
 
 import { Query, Mutation, Resolver, Arg } from 'type-graphql';
 import Post from '../models/Post';
+import PostCreateInput from '../inputs/PostCreateInput';
 
 /**
  * Define resolver
@@ -13,13 +14,9 @@ import Post from '../models/Post';
 class PostResolver {
   @Mutation(() => Boolean)
   async createPost(
-    @Arg("title") title: string,
-    @Arg("content", { nullable: true }) content?: string,
+    @Arg('input', () => PostCreateInput) input: PostCreateInput
   ) {
-    const post = new Post();
-    post.title = title;
-    if (content) post.content = content;
-    await post.save();
+    await Post.insert(input);
     return true;
   }
 
