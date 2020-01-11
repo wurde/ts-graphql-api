@@ -8,6 +8,21 @@ the issue of reduntant code often associated with
 this tech stack. It does this by allowing a developer
 to define their API using classes and decorators.
 
+## Getting started
+
+Getting the server to run locally is as simple as
+cloning the repo, installing dependenices, and
+running `npm start:dev`. This will spin up a GraphQL
+Playground environment with hot reloading.
+
+```shell
+git clone https://github.com/wurde/ts-graphql-api
+cd ts-graphql-api
+npm install
+npm start:dev
+// Open up http://localhost:4000/graphql
+```
+
 ## Apollo Server
 
 For a GraphQL server I use the ApolloServer. This 

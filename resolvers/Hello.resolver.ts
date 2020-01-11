@@ -12,7 +12,7 @@ import { Query, Resolver } from 'type-graphql';
 class Hello {
   @Query(() => String)
   hello() {
-    return "Hello!";
+    return "Hi!";
   }
 }
 
