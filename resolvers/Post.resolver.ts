@@ -2,9 +2,10 @@
  * Dependencies
  */
 
-import { Query, Mutation, Resolver, Arg } from 'type-graphql';
+import { Query, Mutation, Resolver, Arg, Int } from 'type-graphql';
 import Post from '../models/Post';
 import PostCreateInput from '../inputs/PostCreateInput';
+import PostUpdateInput from '../inputs/PostUpdateInput';
 
 /**
  * Define resolver
@@ -12,11 +13,20 @@ import PostCreateInput from '../inputs/PostCreateInput';
 
 @Resolver()
 class PostResolver {
-  @Mutation(() => Boolean)
+  @Mutation(() => Post)
   async createPost(
     @Arg('input', () => PostCreateInput) input: PostCreateInput
   ) {
-    await Post.insert(input);
+    const post = await Post.create(input).save();
+    return post;
+  }
+
+  @Mutation(() => Boolean)
+  async updatePost(
+    @Arg('id', () => Int) id: number,
+    @Arg('input', () => PostUpdateInput) input: PostUpdateInput
+  ) {
+    await Post.update({ id }, input);
     return true;
   }
 
