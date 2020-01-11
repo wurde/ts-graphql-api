@@ -12,14 +12,14 @@ to define their API using classes and decorators.
 
 Getting the server to run locally is as simple as
 cloning the repo, installing dependenices, and
-running `npm start:dev`. This will spin up a GraphQL
+running `npm run start:dev`. This will spin up a GraphQL
 Playground environment with hot reloading.
 
 ```shell
 git clone https://github.com/wurde/ts-graphql-api
 cd ts-graphql-api
 npm install
-npm start:dev
+npm run start:dev
 // Open up http://localhost:4000/graphql
 ```
 
