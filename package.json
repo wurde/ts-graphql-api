@@ -16,7 +16,7 @@
     "@types/node": "^12.7.5",
     "apollo-server-express": "^2.9.16",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "graphql": "^14.5.8",
     "helmet": "^3.18.0",
     "reflect-metadata": "^0.1.13",
